@@ -68,14 +68,6 @@ export class PostsComponent {
       LikesCount: 310,
       CommentsCount: 67,
     },
-    {
-      Id: '5',
-      Content:
-        'Sometimes all you need is a great piece of content without a fancy title. This is just that.',
-      PublishedOn: new Date('2024-09-22'),
-      LikesCount: 50,
-      CommentsCount: 5,
-    },
  ];
 
 }
