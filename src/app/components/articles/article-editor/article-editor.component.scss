@@ -1,0 +1,79 @@
+.container {
+    max-width: 60vw;
+    margin: 5rem auto 0;
+    padding: 2rem;
+    background-color: transparent;
+    border-radius: 1rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-input {
+    width: 100%;
+    background-color: var(--surface-lighter);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: #FF8C42;
+    outline: none;
+}
+
+.editor {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.mat-field {
+    width: 100%;
+    background-color: #121212;
+}
+
+.mat-label {
+    color: #A1A1A1;
+}
+
+.chip-grid {
+    background-color: var(--surface);
+}
+
+.chip {
+    background-color: rgba(255, 140, 66, 0.2);
+    color: #FF8C42;
+}
+
+.chip-icon {
+    color: #FF8C42;
+}
+
+.chip-input {
+    color: transparent;
+}
+
+.publish-button {
+    width: 30%;
+    margin: 20px auto;
+    background-color: #FF8C42;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.publish-button:hover {
+    background-color: rgba(255, 140, 66, 0.9);
+}
+
+.publish-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

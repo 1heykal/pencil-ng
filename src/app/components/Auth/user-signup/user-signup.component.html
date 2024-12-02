@@ -1,0 +1,57 @@
+<div class="signup-container">
+    <div class="signup-card">
+        <h1 class="signup-title">Create Account</h1>
+        <form [formGroup]="signUpForm" (ngSubmit)="register()" class="signup-form">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input id="firstName" 
+                       type="text" 
+                       formControlName="firstName"
+                       class="form-input"
+                       placeholder="Enter your first name">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" 
+                       type="text" 
+                       formControlName="lastName"
+                       class="form-input"
+                       placeholder="Enter your last name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" 
+                       type="text" 
+                       formControlName="email"
+                       class="form-input"
+                       placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" 
+                       type="password" 
+                       formControlName="password"
+                       class="form-input"
+                       placeholder="Enter your password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" 
+                       type="password" 
+                       formControlName="confirmPassword"
+                       class="form-input"
+                       placeholder="Confirm your password">
+            </div>
+
+            <button type="submit" 
+                    [disabled]="!signUpForm.valid"
+                    class="signup-button">
+                Sign Up
+            </button>
+        </form>
+    </div>
+</div>

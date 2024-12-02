@@ -1,0 +1,128 @@
+.count {
+    color: #A0AEC0;
+}
+
+.post-card {
+    background-color: var(--surface)
+}
+
+.post-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-content {
+    padding: 1.5rem;
+    color: var(--text-primary);
+}
+
+.post-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.post-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.saved {
+    color: #FF6B3D;
+}
+
+/*** Author ***/
+.author-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+}
+
+
+.author-name {
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.post-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.post-actions {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+}
+
+
+.action-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: var(--hover);
+    color: var(--primary);
+}
+
+.read-more {
+    color: #FF6B3D;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    // border-top: 1px solid var(--border);
+
+    .tag {
+        background: var(--surface-lighter);
+        color: var(--primary);
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: var(--primary);
+            color: var(--surface);
+        }
+    }
+}
+
+.tag:hover {
+    background: #FF8C42;
+    color: #121212;
+}
+
+.separator {
+    color: #9CA3AF;
+}
+
+.blog-name {
+    color: #FF8C42;
+}

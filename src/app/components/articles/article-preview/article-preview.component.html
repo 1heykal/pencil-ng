@@ -1,0 +1,41 @@
+<div class="post-card">
+    <a [routerLink]="['/article', post.url]" class="post-link" routerLinkActive="router-link-active">
+        <div class="post-content">
+            <div class="author-banner">
+                <div class="author-info">
+                    <img (click)="[log($event), visitUser()]" [src]="post.authorPhotoPath" class="author-avatar">
+                    <div class="author-details">
+                        <div class="name-container">
+                            <span (click)="[log($event), visitUser()]" class="author-name">{{post.authorName}}</span>
+                            <span *ngIf="post.blogName"  class="separator">&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+                            <span *ngIf="post.blogName" class="blog-name" (click)="[log($event), visitBlog()]">{{post.blogName}}</span>
+                        </div>
+                        <span class="post-date">{{(post.publishedOn | date)}}</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" (click)="log($event)">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                    <button class="action-btn" (click)="[log($event), save()]">
+                        @if(post.saved){
+                        <mat-icon class="saved">bookmark</mat-icon>
+                        }@else{
+                        <mat-icon>bookmark_border</mat-icon>
+                        }
+                    </button>
+                </div>
+            </div>
+
+            <div class="post-preview">
+                <h2 class="post-title">{{post.title}}</h2>
+                <p class="post-subtitle">{{post.subtitle}}</p>
+            </div>
+
+            <div class="hover-effect">
+                <span class="read-more">Read Article →</span>
+            </div>
+        </div>
+    </a>
+</div>
+

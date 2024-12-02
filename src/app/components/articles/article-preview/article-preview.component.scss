@@ -1,0 +1,118 @@
+@import '../../styles/post-card';
+
+
+
+img {
+    transform: scale(0.7);
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.post-card {
+    @apply bg-[#1E1E1E] rounded-xl transition-all duration-300 border border-gray-800/50;
+
+    &:hover {
+        @apply border-gray-700/50;
+
+        .hover-effect {
+            @apply opacity-100;
+        }
+    }
+
+    max-width: 50vw;
+}
+
+
+.author-banner {
+    @apply flex justify-between items-center mb-5;
+}
+
+
+
+.post-card {
+    background: var(--surface);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.post-content {
+    padding: 24px;
+    position: relative;
+}
+
+.author-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-size: 1.1rem;
+}
+
+
+.post-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.post-subtitle {
+    line-height: 1.5;
+}
+
+.action-btn {
+    transition: all 0.2s ease;
+}
+
+
+.hover-effect {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: right;
+    margin-top: 16px;
+}
+
+.post-card:hover .hover-effect {
+    opacity: 1;
+}
+
+
+.name-container {
+    display: flex;
+    align-items: center;
+}
+
+.separator {
+    color: var(--text-secondary);
+}
+
+.blog-name {
+    color: var(--text-secondary);
+}

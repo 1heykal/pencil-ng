@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.main-content {
+  margin: 0 auto;
+  margin-top: 64px;
+  padding: 2rem;
+  background-color: var(--background);
+  min-height: calc(100vh - 64px);
+  transition: background-color 0.3s ease;
+}
+
+.content-container {
+  max-width: 90vw;
+  margin: 0 auto;
+  width: 100%;
+}

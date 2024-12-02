@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="createPostForm" (ngSubmit)="create()" class="form-container">
+
+        <div>
+            <input id="title" type="text" formControlName="title" placeholder="Title" class="form-input">
+        </div>
+
+        <div>
+            <input id="subtitle" type="text" formControlName="subtitle" placeholder="Subtitle" class="form-input">
+        </div>
+
+        <div>
+            <p-editor formControlName="content" [style]="{ height: '500px', }"
+                [modules]="editorConfig.modules" [placeholder]="'Write your post here...'" styleClass="custom-editor"
+                class="editor" />
+        </div>
+
+        <div>
+            <mat-form-field class="mat-field" appearance="fill">
+                <mat-label class="mat-label">Tags</mat-label>
+                <mat-chip-grid #reactiveChipGrid aria-label="Enter tags" formControlName="tags" class="chip-grid">
+                    @for (keyword of reactiveKeywords(); track keyword) {
+                    <mat-chip-row (removed)="removeReactiveKeyword(keyword)" class="chip">
+                        {{keyword}}
+                        <button matChipRemove aria-label="remove tag">
+                            <mat-icon class="chip-icon">cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                    }
+                </mat-chip-grid>
+                <input placeholder="Add tags..." [matChipInputFor]="reactiveChipGrid"
+                    (matChipInputTokenEnd)="addReactiveKeyword($event)" class="chip-input">
+            </mat-form-field>
+        </div>
+
+
+        <button type="submit" [disabled]="!createPostForm.valid" class="publish-button">
+            Publish
+        </button>
+    </form>
+</div>

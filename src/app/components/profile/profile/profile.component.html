@@ -1,0 +1,40 @@
+<div class="container">
+    <app-profile-info></app-profile-info>
+    <div class="posts-wrapper">
+        <mat-tab-group (selectedTabChange)="onTabChange($event)" class="custom-tabs">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">grid_on</mat-icon>
+                    <span class="tab-label">Posts</span>
+                </ng-template>
+                <div class="posts-list">
+                    <ng-container *ngFor="let post of posts; let i = index">
+                        @if(post.type === 'short'){
+                        <app-short-post [post]="post" class="post-item"></app-short-post>
+                        }@else {
+                        <app-article-preview [post]="post" class="post-item"></app-article-preview>
+                        }
+                    </ng-container>
+                </div>
+            </mat-tab>
+
+            <mat-tab *ngIf="sameuser">
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">favorite</mat-icon>
+                    <span class="tab-label">Likes</span>
+                </ng-template>
+                <ng-template matTabContent>
+                    <div class="posts-list">
+                        <ng-container *ngFor="let post of likedPosts; let i = index">
+                            @if(post.type === 'short'){
+                            <app-short-post [post]="post" class="post-item"></app-short-post>
+                            }@else {
+                            <app-article-preview [post]="post" class="post-item"></app-article-preview>
+                            }
+                        </ng-container>
+                    </div>
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

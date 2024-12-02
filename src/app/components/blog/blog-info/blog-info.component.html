@@ -1,0 +1,80 @@
+<section class=" py-8">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex justify-center">
+                <mat-card class="w-full max-w-sm bg-[#1E1E1E] border border-gray-800 backdrop-blur-sm">
+                    <div class="flex flex-col items-center p-6 relative">
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-0 bg-[#FF6B3D] rounded-full opacity-20 group-hover:opacity-30 transition-opacity">
+                            </div>
+                            <img [src]="blog.photoPath"
+                                class="rounded-full h-28 w-28 object-cover border-2 border-[#FF6B3D] shadow-lg shadow-[#FF6B3D]/20">
+                        </div>
+                        <h2 class="mt-6 text-2xl font-bold text-white tracking-wide">{{blog.name}}</h2>
+                        <p class="text-gray-400 mt-1 text-lg">&#64;{{blog.username}}</p>
+                        <button mat-flat-button
+                            class="mt-6 bg-[#FF6B3D] text-white px-8 py-2 rounded-full hover:bg-[#FF8C42] transition-all duration-300 shadow-lg hover:shadow-[#FF6B3D]/30"
+                            (click)="subscribe()">
+                            {{subscibeButtonText}}
+                        </button>
+                    </div>
+                </mat-card>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 auto-rows-min">
+                <mat-card class="bg-[#1E1E1E] hover:bg-[#252525] transition-all duration-300 border border-gray-800">
+                    <div class="p-4 text-center">
+                        <div class="text-3xl font-bold text-[#FF6B3D] mb-1">{{blog.postsCount}}</div>
+                        <div class="text-gray-400">Posts</div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="bg-[#1E1E1E] hover:bg-[#252525] transition-all duration-300 border border-gray-800">
+                    <div class="p-4 text-center">
+                        <div class="text-3xl font-bold text-[#FF6B3D] mb-1">{{blog.subscriptionsCount}}</div>
+                        <div class="text-gray-400">Subscribers</div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="bg-[#1E1E1E] hover:bg-[#252525] transition-all duration-300 border border-gray-800">
+                    <div class="p-4 text-center">
+                        <div class="text-3xl font-bold text-[#FF6B3D] mb-1">{{blog.subscriptionsCount}}</div>
+                        <div class="text-gray-400">Following</div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="bg-[#1E1E1E] hover:bg-[#252525] transition-all duration-300 border border-gray-800">
+                    <div class="p-4 text-center">
+                        <div class="text-3xl font-bold text-[#FF6B3D] mb-1">{{blog.subscriptionsCount}}</div>
+                        <div class="text-gray-400">Likes</div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="col-span-2 bg-[#1E1E1E] border border-gray-800"
+                    *ngIf="blog.twitterUrl || blog.instagramUrl || blog.linkedinUrl || blog.githubUrl">
+                    <div class="p-4">
+                        <div class="flex justify-center space-x-8">
+                            <a [href]="blog.twitterUrl" target="_blank" *ngIf="blog.twitterUrl"
+                                class="text-gray-400 hover:text-[#FF6B3D] transform hover:scale-110 transition-all duration-300 text-2xl">
+                                <i class="pi pi-twitter"></i>
+                            </a>
+                            <a [href]="blog.instagramUrl" target="_blank" *ngIf="blog.instagramUrl"
+                                class="text-gray-400 hover:text-[#FF6B3D] transform hover:scale-110 transition-all duration-300 text-2xl">
+                                <i class="pi pi-instagram"></i>
+                            </a>
+                            <a [href]="blog.linkedinUrl" target="_blank" *ngIf="blog.linkedinUrl"
+                                class="text-gray-400 hover:text-[#FF6B3D] transform hover:scale-110 transition-all duration-300 text-2xl">
+                                <i class="pi pi-linkedin"></i>
+                            </a>
+                            <a [href]="blog.githubUrl" target="_blank" *ngIf="blog.githubUrl"
+                                class="text-gray-400 hover:text-[#FF6B3D] transform hover:scale-110 transition-all duration-300 text-2xl">
+                                <i class="pi pi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

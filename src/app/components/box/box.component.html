@@ -1,0 +1,33 @@
+<div class="max-w-[50vw] mx-auto bg-gradient-to-br p-8 rounded-2xl border border-gray-800/30">
+    <div class="header-section mb-8">
+        <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF6B3D] to-[#FF8C42] mb-2">
+            Saved Collection
+        </h2>
+        <div class="flex items-center space-x-2">
+            <mat-icon class="text-[#FF6B3D]">bookmark</mat-icon>
+            <p class="text-gray-400">{{posts.length}} saved posts</p>
+        </div>
+    </div>
+
+    @if(loading){
+    <div class="flex justify-center items-center py-12">
+        <mat-spinner [diameter]="40" [strokeWidth]="4" color="accent"></mat-spinner>
+    </div>
+    }
+
+    <div class="posts space-y-6">
+        <ng-container *ngFor="let post of posts; let i = index">
+            <div class="post-wrapper transform hover:scale-[1.02] transition-all duration-300">
+                @if(post.type === 'short'){
+                <app-short-post [post]="post"></app-short-post>
+                }@else {
+                <app-article-preview [post]="post"></app-article-preview>
+                }
+            </div>
+
+            @if(i !== posts.length - 1){
+            <div class="h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent my-4"></div>
+            }
+        </ng-container>
+    </div>
+</div>

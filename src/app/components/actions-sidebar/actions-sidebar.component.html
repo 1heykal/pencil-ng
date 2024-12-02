@@ -1,0 +1,17 @@
+<div class="fixed bottom-8 right-8 flex flex-col gap-4">
+    <a mat-flat-button 
+       [routerLink]="['/post/create']" 
+       routerLinkActive="router-link-active"
+       class="bg-[#1E1E1E] text-white px-6 py-3 rounded-full border border-[#FF6B3D] hover:bg-[#FF6B3D] transition-all duration-300 flex items-center gap-2">
+        <i class="pi pi-plus"></i>
+        Create Post
+    </a>
+
+    <a mat-flat-button 
+       [routerLink]="['/article/editor']"
+       routerLinkActive="router-link-active" 
+       class="bg-[#1E1E1E] text-white px-6 py-3 rounded-full border border-[#FF6B3D] hover:bg-[#FF6B3D] transition-all duration-300 flex items-center gap-2">
+        <i class="pi pi-pencil"></i>
+        Write Article
+    </a>
+</div>

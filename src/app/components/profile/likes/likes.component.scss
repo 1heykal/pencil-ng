@@ -1,0 +1,23 @@
+.likes-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-wrapper {
+    background: #1E1E1E;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.empty-state {
+    mat-icon {
+        opacity: 0.6;
+    }
+} 

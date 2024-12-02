@@ -1,0 +1,86 @@
+@import '../../styles/post-card';
+@import '../../styles/comment-card';
+
+.theme-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.post-card {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    max-width: 50vw;
+    @extend .theme-transition;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+
+    &:hover {
+        border-color: var(--primary-color);
+    }
+}
+
+
+.post-card {
+    @apply transition-all duration-300 border border-gray-800/50;
+}
+
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-name {
+    font-size: 1.1rem;
+}
+
+
+.post-card:hover .hover-effect {
+    opacity: 1;
+}
+
+.author-avatar,
+.author-name {
+    cursor: pointer;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-card-content {
+    padding: 1.1rem 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.625;
+}
+
+
+.post-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+}
+
+
+a,
+a {
+
+    &:visited,
+    &:active,
+    &:focus,
+    &::selection,
+    &:link {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+

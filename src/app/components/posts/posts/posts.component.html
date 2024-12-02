@@ -1,0 +1,37 @@
+<div class="min-h-screen max-w-[50vw] mx-auto">
+    @if(loading){
+    <div class="flex justify-center p-8">
+        <mat-spinner color="accent" diameter="48"></mat-spinner>
+    </div>
+    }
+
+    <div class="max-w-3xl mx-auto p-4 md:p-8">
+        @if(posts && posts.length > 0){
+        <div class="space-y-8">
+            <ng-container *ngFor="let post of posts; let i = index">
+                <div class="">
+                    @if(post.type === 'short'){
+                    <app-short-post [post]="post"></app-short-post>
+                    }@else{
+                    <app-article-preview [post]="post"></app-article-preview>
+                    }
+                </div>
+
+                @if(i !== posts.length - 1){
+                <div class="my-6 border-b border-gray-800"></div>
+                }
+            </ng-container>
+        </div>
+        }
+    </div>
+
+    @if(error){
+    <div class="max-w-2xl mx-auto mt-4 p-6 rounded-lg border border-gray-800">
+        <div class="flex items-center justify-center flex-col">
+            <mat-icon class="text-primary text-4xl mb-4"
+                [ngStyle]="{'font-size': '36px', 'height': '36px', 'width': '36px'}">error_outline</mat-icon>
+            <p class="text-gray-300 dark:text-gray-400">Error loading posts. Please try again later.</p>
+        </div>
+    </div>
+    }
+</div>

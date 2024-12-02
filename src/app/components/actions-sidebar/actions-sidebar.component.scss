@@ -1,0 +1,36 @@
+.sidebar-actions {
+    @apply fixed right-0 top-[78px] h-full;
+    padding: 15px;
+    background-color: transparent;
+}
+
+a {
+    @apply bg-[#FF6B3D] hover:bg-[#FF8C42] transition-colors duration-300;
+    &:hover {
+        @apply shadow-lg shadow-[#FF6B3D]/30;
+    }
+}
+
+:host ::ng-deep {
+    .speeddial-linear-demo {
+        .p-speeddial {
+            &-direction {
+                &-up {
+                    @apply left-1/2 -translate-x-8 bottom-0;
+                }
+
+                &-down {
+                    @apply left-1/2 -translate-x-8 top-0;
+                }
+
+                &-left {
+                    @apply right-0 top-1/2 -translate-y-8;
+                }
+
+                &-right {
+                    @apply left-0 top-1/2 -translate-y-8;
+                }
+            }
+        }
+    }
+}

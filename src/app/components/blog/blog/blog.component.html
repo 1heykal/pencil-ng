@@ -1,0 +1,14 @@
+<app-blog-info [blog]="blog"></app-blog-info>
+<ng-container *ngFor="let post of posts; let i = index">
+    <div class="transform hover:scale-[1.02] transition-all duration-300 mx-auto max-w-[50vw]">
+        @if(post.type === 'short'){
+        <app-short-post [post]="post"></app-short-post>
+        }@else {
+        <app-article-preview [post]="post"></app-article-preview>
+        }
+
+        @if(i !== posts.length - 1){
+        <div class="h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent my-4"></div>
+        }
+    </div>
+</ng-container>

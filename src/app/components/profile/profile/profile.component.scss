@@ -1,0 +1,39 @@
+.container {
+    margin: auto;
+    min-height: 100vh;
+    max-width: 50vw;
+}
+
+.posts-wrapper {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 0.75rem;
+}
+
+.custom-tabs {
+    margin-top: 1rem;
+}
+
+
+.tab-icon {
+    color: #FF6B3D;
+}
+
+.tab-label {
+    margin-left: 0.5rem;
+    color: var(--primary);
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+
+}
+
+.post-item {
+    display: block;
+    transition: transform 0.3s ease;
+}

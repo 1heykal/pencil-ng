@@ -33,16 +33,14 @@
               }
             ],
             "styles": [
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "@angular/material/prebuilt-themes/magenta-violet.css",
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/styles/themes"
+              ]
             }
           },
           "configurations": {
@@ -103,6 +101,7 @@
             "styles": [
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/highlight.js/styles/monokai.css",
               "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss"
             ],

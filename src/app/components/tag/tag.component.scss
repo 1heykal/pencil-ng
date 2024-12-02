@@ -1,0 +1,65 @@
+.tag-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    //   border: 1px solid rgba(128, 128, 128, 0.3);
+
+    //  background: linear-gradient(to bottom right, #1E1E1E, #2A2A2A);
+
+}
+
+.header-section {
+    margin-bottom: 2rem;
+}
+
+.tag-label {
+    color: #A3A3A3;
+
+    font-size: 0.875rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+}
+
+.tag-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #FF6B3D, #FF8C42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.5rem 0;
+}
+
+.posts-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #A3A3A3;
+
+}
+
+.icon-highlight {
+    color: #FF6B3D;
+}
+
+
+.posts-section {
+    margin: 0 auto;
+}
+
+.post-wrapper {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.post-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(128, 128, 128, 0.5), transparent);
+    margin: 1rem 0;
+}

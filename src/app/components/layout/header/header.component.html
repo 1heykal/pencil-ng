@@ -1,0 +1,30 @@
+<mat-toolbar class="border-b px-4 theme-transition">
+    <span class="text-primary text-xl font-bold">{{title | async}}</span>
+    <span class="flex-1"></span>
+
+    <button mat-icon-button class="theme-toggle mr-4" (click)="toggleTheme()"
+        [matTooltip]="(isDarkTheme$ | async) ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+        <mat-icon class="text-primary">
+            {{(isDarkTheme$ | async) ? 'dark_mode' : 'light_mode'}}
+        </mat-icon>
+    </button>
+
+
+    @if(!isUserLogged){
+    <a mat-icon-button class="icon" [routerLink]="['/login']" routerLinkActive="router-link-active">
+        <i class="pi pi-sign-in" style="font-size: 1.2rem"></i>
+    </a>
+    }
+    @else {
+    <a mat-icon-button class="icon" (click)="logout()" matTooltip="Logout">
+        <i class="pi pi-sign-out" style="font-size: 1.2rem"></i>
+    </a>
+    }
+
+
+    <a mat-icon-button class="icon" aria-label="Example icon-button with share icon" [routerLink]="['/profile']"
+        routerLinkActive="router-link-active">
+        <img class="rounded-full" *ngIf="user$" [src]="user$.photoPath" alt="User Photo">
+        <i *ngIf="!user$" class="pi pi-user" style="font-size: 1.5rem"></i>
+    </a>
+</mat-toolbar>

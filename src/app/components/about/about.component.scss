@@ -1,0 +1,46 @@
+
+
+:host {
+  .max-w-4xl {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  mat-card {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+
+    &:hover {
+      border-color: var(--primary-color-light);
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--heading-color);
+  }
+
+  p {
+    color: var(--text-color-secondary);
+  }
+
+
+  mat-icon {
+    color: var(--primary-color);
+  }
+}
+
+.mat-icon {
+  width: auto;
+  height: auto;
+}
+
+.pi {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+

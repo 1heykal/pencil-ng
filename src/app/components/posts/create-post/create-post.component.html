@@ -1,0 +1,62 @@
+<form [formGroup]="createPostForm" (ngSubmit)="create()" class="max-w-3xl mx-auto p-8 rounded-xl shadow-lg border border-gray-800">
+    <div class="mb-6">
+        <input class="w-full bg-[#121212] text-gray-200 px-4 py-3 rounded-lg border border-gray-700 focus:border-[#FF8C42] focus:outline-none transition-colors" 
+               id="title" 
+               type="text" 
+               formControlName="title" 
+               placeholder="Title">
+    </div>
+
+    <div class="mb-6">
+        <input class="w-full bg-[#121212] text-gray-200 px-4 py-3 rounded-lg border border-gray-700 focus:border-[#FF8C42] focus:outline-none transition-colors"
+               id="subtitle" 
+               type="text" 
+               formControlName="subtitle" 
+               placeholder="Subtitle">
+    </div>
+
+    <div class="mb-6">
+        <textarea class="w-full bg-[#121212] text-gray-200 px-4 py-3 rounded-lg border border-gray-700 focus:border-[#FF8C42] focus:outline-none transition-colors resize-none"
+                  formControlName="content" 
+                  id="content" 
+                  rows="6"
+                  placeholder="Write your story..."></textarea>
+    </div>
+
+    <div class="mb-6">
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label class="text-gray-400">Tags</mat-label>
+            <mat-chip-grid #reactiveChipGrid 
+                          aria-label="Enter tags" 
+                          formControlName="tags"
+                          class="bg-[#121212]">
+                @for (keyword of reactiveKeywords(); track keyword) {
+                <mat-chip-row (removed)="removeReactiveKeyword(keyword)" 
+                             class="bg-[#FF8C42]/20 text-[#FF8C42]">
+                    {{keyword}}
+                    <button matChipRemove aria-label="remove tag">
+                        <mat-icon class="text-[#FF8C42]">cancel</mat-icon>
+                    </button>
+                </mat-chip-row>
+                }
+            </mat-chip-grid>
+            <input placeholder="Add tags..." 
+                   [matChipInputFor]="reactiveChipGrid"
+                   (matChipInputTokenEnd)="addReactiveKeyword($event)"
+                   class="text-gray-200">
+        </mat-form-field>
+    </div>
+
+    <mat-button-toggle-group aria-label="Post Type" 
+                            formControlName="type"
+                            class="mb-8 bg-[#121212] border-[#FF8C42]">
+        <mat-button-toggle value="short" class="text-gray-200 hover:bg-[#FF8C42]/10">Short</mat-button-toggle>
+        <mat-button-toggle value="long" class="text-gray-200 hover:bg-[#FF8C42]/10">Long</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <button type="submit" 
+            [disabled]="!createPostForm.valid"
+            class="w-full bg-[#FF8C42] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#FF8C42]/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+        Publish
+    </button>
+</form>

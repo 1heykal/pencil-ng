@@ -1,39 +1,58 @@
+@use 'app/styles/themes/variables';
 /* You can add global styles to this file, and also import other style files */
+
+
+
+@import 'highlight.js/styles/monokai.css';
+
 @import "primeicons/primeicons.css";
+/* src/styles.css */
 
-html,
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// import Quill styles in styles.scss
+@import "../node_modules/quill/dist/quill.core.css";
+@import "../node_modules/quill/dist/quill.snow.css";
+
+// Add this near the top of the file, after imports
+.theme-transition {
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+// Global theme styles
 body {
-    box-sizing: border-box;
-    height: 100%;
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: var(--text-primary);
+    @extend .theme-transition;
 }
 
-html::before,
-html::after,
-body::before,
-body::after {
-    box-sizing: border-box;
+// Material overrides
+.mat-mdc-card {
+    background-color: var(--surface) !important;
+    border-color: var(--border) !important;
+    @extend .theme-transition;
 }
 
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+// Common utility classes
+.text-primary {
+    color: var(--primary) !important;
 }
 
-.tooltip {
-    left: 15px;
+.text-secondary {
+    color: var(--text-secondary) !important;
 }
 
-.mat-mdc-tooltip {
-    .mdc-tooltip__surface {
-        letter-spacing: -0.5px;
-        border: 1px solid #333;
-        padding: 10px;
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255, 0.1);
-        color: #ffffff;
-        font-size: 1rem;
-        font-weight: 500;
-    }
+.bg-surface {
+    background-color: var(--surface) !important;
+}
+
+.border-theme {
+    border-color: var(--border) !important;
 }

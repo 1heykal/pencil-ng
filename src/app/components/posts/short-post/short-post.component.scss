@@ -1,0 +1,66 @@
+@import '../../../styles/post-card';
+
+
+a,
+a {
+
+  &:visited,
+  &:active,
+  &:focus,
+  &::selection,
+  &:link {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.theme-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:host {
+  .post-card {
+    @extend .theme-transition;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+
+
+    &:hover {
+      border-color: var(--primary-color);
+      box-shadow: var(--card-shadow-hover);
+    }
+  }
+}
+
+
+img {
+  transform: scale(0.7);
+  padding: 0;
+  margin: 0;
+}
+
+
+.post-card {
+  @apply bg-[#1E1E1E] rounded-xl transition-all duration-300 border border-gray-800/50;
+
+}
+
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.author-name {
+  font-size: 1.1rem;
+}
+
+
+.post-card:hover .hover-effect {
+  opacity: 1;
+}

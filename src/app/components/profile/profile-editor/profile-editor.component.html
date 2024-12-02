@@ -1,0 +1,48 @@
+<div class="profile-container">
+    <h1 class="profile-header">Profile</h1>
+    <form [formGroup]="profileForm" class="profile-form">
+        <div class="input-group">
+            <label for="first-name" class="input-label">First Name</label>
+            <input id="first-name" type="text" formControlName="firstName" class="input-field">
+        </div>
+
+        <div class="input-group">
+            <label for="last-name" class="input-label">Last Name</label>
+            <input id="last-name" type="text" formControlName="lastName" class="input-field">
+        </div>
+
+        <div class="input-group">
+            <label for="username" class="input-label">Username</label>
+            <input id="username" type="text" formControlName="username" class="input-field">
+        </div>
+
+        <div class="input-group">
+            <label for="bio" class="input-label">Bio</label>
+            <textarea id="bio" formControlName="bio" rows="4" class="textarea-field input-field"></textarea>
+        </div>
+
+        <div class="image-upload-container">
+            <img src="{{baseUrl}}/Images/{{profileForm.value.photoPath}}" alt="Image Preview" class="image-preview">
+            <app-file-upload currentFileName="{{profileForm.value.photoPath}}"
+                (addedFilePath)="setPhotoPath($event)"></app-file-upload>
+        </div>
+
+        <div class="input-group">
+            <label for="birthDate" class="input-label">Birth Date</label>
+            <input id="birthDate" type="date" formControlName="birthDate" class="input-field">
+        </div>
+
+        <div class="input-group">
+            <label for="gender" class="input-label">Gender</label>
+            <select id="gender" formControlName="gender" class="select-field input-field">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="notset" selected>Not Set</option>
+            </select>
+        </div>
+
+        <button type="submit" [disabled]="!profileForm.valid" (click)="updateProfile()" class="submit-button">
+            Update Profile
+        </button>
+    </form>
+</div>
