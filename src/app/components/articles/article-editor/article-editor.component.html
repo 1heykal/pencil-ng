@@ -10,9 +10,19 @@
         </div>
 
         <div>
-            <p-editor formControlName="content" [style]="{ height: '500px', }"
-                [modules]="editorConfig.modules" [placeholder]="'Write your post here...'" styleClass="custom-editor"
-                class="editor" />
+            <mat-form-field>
+                <mat-label>Add to Blog</mat-label>
+                <mat-select formControlName="blogId">
+                    @for (blog of blogs; track blog) {
+                    <mat-option [value]="blog.id">{{blog.name}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p-editor formControlName="content" [style]="{ height: '500px', }" [modules]="editorConfig.modules"
+                [placeholder]="'Write your post here...'" styleClass="custom-editor" class="editor" />
         </div>
 
         <div>

@@ -16,6 +16,7 @@ import { ArticleEditorComponent } from './components/articles/article-editor/art
 import { AboutComponent } from './components/about/about.component';
 import { LikesComponent } from './components/profile/likes/likes.component';
 import { noAuthGuard } from './Guards/no-auth.guard';
+import { CreateBlogComponent } from './components/blog/create-blog/create-blog.component';
 
 export const routes: Routes = [
   {
@@ -111,6 +112,11 @@ export const routes: Routes = [
         path: ':username',
         component: ProfileComponent,
         pathMatch: 'full',
+      },
+      {
+        path: 'blog/create',
+        component: CreateBlogComponent,
+        canActivate: [authGuard],
       },
       {
         path: 'blog/:username',

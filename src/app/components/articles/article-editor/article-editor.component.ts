@@ -25,10 +25,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { EditorModule } from 'primeng/editor';
 import { QuillOptions } from 'quill';
+import { BlogInfo } from '../../../ViewModels/BlogInfo';
 
 @Component({
   selector: 'app-article-editor',
@@ -42,6 +44,8 @@ import { QuillOptions } from 'quill';
     MatChipsModule,
     MatIconModule,
     MatButtonToggleModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   templateUrl: './article-editor.component.html',
   styleUrl: './article-editor.component.scss',
@@ -52,9 +56,12 @@ export class ArticleEditorComponent {
   private postsService = inject(GenericApiHandlerService);
   private router = inject(Router);
 
+  blogs: BlogInfo[] = [];
+
   createPostForm = this.formBuilder.group({
     title: [''],
     subtitle: [''],
+    blogId: [''],
     content: ['', Validators.required],
     tags: [[]],
   });
@@ -94,7 +101,11 @@ export class ArticleEditorComponent {
     },
   };
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.postsService.get('Account/Blogs').subscribe((res) => {
+      this.blogs = res.data as BlogInfo[];
+    });
+  }
 
   create() {
     let post: CreatePostVM = {
@@ -102,6 +113,7 @@ export class ArticleEditorComponent {
       subtitle: this.createPostForm.value.subtitle,
       content: this.createPostForm.value.content ?? '',
       tags: this.createPostForm.value.tags ?? [],
+      blogId: this.createPostForm.value.blogId,
       type: 'long',
     };
     console.log(this.createPostForm.value);

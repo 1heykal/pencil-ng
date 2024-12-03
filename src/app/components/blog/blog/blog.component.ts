@@ -11,7 +11,12 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule, BlogInfoComponent, ArticlePreviewComponent, ShortPostComponent],
+  imports: [
+    CommonModule,
+    BlogInfoComponent,
+    ArticlePreviewComponent,
+    ShortPostComponent,
+  ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss',
 })
@@ -26,6 +31,8 @@ export class BlogComponent implements OnInit {
     const username = this.route.snapshot.paramMap.get('username');
     this.blogService.get(`Blog/info/username/${username}`).subscribe((blog) => {
       this.blog = blog.data as BlogInfo;
+      this.blog.photoPath = `${environment.BaseURL}/Images/${this.blog.photoPath}`;
+
       this.blogService.get(`Blog/${this.blog.id}/posts`).subscribe((posts) => {
         this.posts = posts.data as IPosts[];
         this.posts.forEach((post) => {

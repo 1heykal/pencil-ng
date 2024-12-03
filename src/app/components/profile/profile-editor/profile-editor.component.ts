@@ -43,10 +43,6 @@ export class ProfileEditorComponent implements OnInit {
       });
   }
 
-  uploadImage() {
-    this.userService.post('ImageUpload', this.profileForm.value.photoPath);
-  }
-
   ngOnInit(): void {
     this.profileService.setTitle('Profile');
 
@@ -65,6 +61,9 @@ export class ProfileEditorComponent implements OnInit {
     });
   }
 
+  uploadImage() {
+    this.userService.post('ImageUpload', this.profileForm.value.photoPath);
+  }
   setPhotoPath(name: string) {
     this.profileForm.value.photoPath = name;
   }
