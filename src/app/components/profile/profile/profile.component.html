@@ -35,6 +35,16 @@
                     </div>
                 </ng-template>
             </mat-tab>
+
+            <mat-tab *ngIf="sameuser">
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">library_books</mat-icon>
+                    <span class="tab-label">Blogs</span>
+                </ng-template>
+                <app-blogs></app-blogs>
+            </mat-tab>
+
+
         </mat-tab-group>
     </div>
 </div>

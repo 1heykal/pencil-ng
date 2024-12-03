@@ -1,0 +1,36 @@
+<div class="tag-container">
+    <div class="header-section">
+        <span class="tag-label">Blogs</span>
+        <h1 class="tag-title">Blogs</h1>
+        <div class="posts-count">
+            <mat-icon class="icon-highlight">local_offer</mat-icon>
+            <p>{{blogs.length}} posts</p>
+        </div>
+        <a mat-flat-button [routerLink]="['/blog/create']" routerLinkActive="router-link-active"
+            class="bg-[#1E1E1E] text-white px-6 py-3 rounded-full border border-[#FF6B3D] hover:bg-[#FF6B3D] transition-all duration-300 flex items-center gap-2">
+            <i class="pi pi-pencil"></i>
+            Create Blog
+        </a>
+
+    </div>
+
+    <div class="posts-section">
+        @for(blog of blogs; track blog){
+
+        @if(blogs){
+        <mat-card class="blog" appearance="outlined" [routerLink]="['../blog', blog.username]">
+            <img mat-card-image [src]="blog.photoPath">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{blog.name}}</mat-card-title>
+                <mat-card-subtitle>&#64;{{blog.username}}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        }@else {
+        <p class="blog">You don't have blogs yet! What about Creating one?</p>
+        }
+
+        }
+
+    </div>
+</div>

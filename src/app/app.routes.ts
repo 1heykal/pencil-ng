@@ -17,6 +17,7 @@ import { AboutComponent } from './components/about/about.component';
 import { LikesComponent } from './components/profile/likes/likes.component';
 import { noAuthGuard } from './Guards/no-auth.guard';
 import { CreateBlogComponent } from './components/blog/create-blog/create-blog.component';
+import { BlogsComponent } from './components/blog/blogs/blogs.component';
 
 export const routes: Routes = [
   {
@@ -107,6 +108,11 @@ export const routes: Routes = [
         component: BoxComponent,
         pathMatch: 'full',
         title: 'Box | Pencil',
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent,
+        pathMatch: 'full',
       },
       {
         path: ':username',

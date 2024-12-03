@@ -19,6 +19,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../Services/auth.service';
 import { RouterModule } from '@angular/router';
 import { LikesComponent } from '../likes/likes.component';
+import { BlogsComponent } from '../../blog/blogs/blogs.component';
 
 @Component({
   selector: 'app-profile',
@@ -33,7 +34,8 @@ import { LikesComponent } from '../likes/likes.component';
     ArticlePreviewComponent,
     MatDividerModule,
     RouterModule,
-    LikesComponent
+    LikesComponent,
+    BlogsComponent,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
