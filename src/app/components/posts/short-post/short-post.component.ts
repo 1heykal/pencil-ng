@@ -13,6 +13,7 @@ import { IPosts } from '../../../ViewModels/PostsVM';
 import { formatDistanceToNow, format } from 'date-fns';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RelativeDateComponent } from '../../../shared/components/relative-date/relative-date.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-short-post',
@@ -27,7 +28,8 @@ import { RelativeDateComponent } from '../../../shared/components/relative-date/
     MatIconModule,
     RouterModule,
     MatTooltipModule,
-    RelativeDateComponent
+    RelativeDateComponent,
+    MatMenuModule,
   ],
   templateUrl: './short-post.component.html',
   styleUrl: './short-post.component.scss',
@@ -88,7 +90,8 @@ export class ShortPostComponent implements OnInit {
       return formatDistanceToNow(postDate, { addSuffix: true });
     } else if (diffInHours < 48) {
       return 'Yesterday';
-    } else if (diffInHours < 168) { // 7 days
+    } else if (diffInHours < 168) {
+      // 7 days
       return formatDistanceToNow(postDate, { addSuffix: true });
     } else {
       return format(postDate, 'MMM d, yyyy');

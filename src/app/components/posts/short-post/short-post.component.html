@@ -1,6 +1,6 @@
 <mat-card class="post-card">
-    <mat-card-header class="p-4 border-b">
-        <div class="author-info">
+    <mat-card-header class="p-4 border-b flex flex-row">
+        <div class="author-info ">
             <img (click)="visitUser()" [src]="post.authorPhotoPath" class="author-avatar">
             <div class="author-details">
                 <span (click)="visitUser()" class="author-name">{{post.authorName}}</span>
@@ -9,6 +9,22 @@
                 </mat-card-subtitle>
             </div>
         </div>
+        <div class="ml-auto">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_horiz</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>delete</mat-icon>
+                    <span>Delete</span>
+                </button>
+            </mat-menu>
+        </div>
+
     </mat-card-header>
 
     <mat-card-content class="px-6 py-5">
