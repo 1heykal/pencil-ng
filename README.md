@@ -48,7 +48,7 @@ Pencil is a modern, feature-rich blogging platform built with Angular, designed 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/pencil.git
+git clone https://github.com/1heykal/pencil.git
 cd pencil
 ```
 
